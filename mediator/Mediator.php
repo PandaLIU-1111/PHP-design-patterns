@@ -6,7 +6,11 @@
  * Time: 2:52 PM
  */
 
-class Mediator
+class Mediator extends AbstractMediator
 {
+    public function execute()
+    {
+        // TODO: Implement execute() method.
+    }
 
 }

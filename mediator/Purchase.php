@@ -8,5 +8,13 @@
 
 class Purchase
 {
+    public function buyIBMComputer()
+    {
+        echo '采购IBM电脑' . PHP_EOL;
+    }
 
+    public function refuseBuyIBM()
+    {
+        echo '不再采购IBM电脑' . PHP_EOL;
+    }
 }

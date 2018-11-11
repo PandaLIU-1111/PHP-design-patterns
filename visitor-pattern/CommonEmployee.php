@@ -33,6 +33,6 @@ class CommonEmployee extends Employee
     public function accept(IVisitor $visitor)
     {
         // TODO: Implement accept() method.
-        $visitor->getEmployee($this);
+        $visitor->visit($this);
     }
 }

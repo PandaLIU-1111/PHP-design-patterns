@@ -10,19 +10,21 @@ require_once './IVisitor.php';
 
 class Visitor implements IVisitor
 {
-    public function getEmployee(CommonEmployee $commonEmployee)
+    public function visit($visitor)
     {
-        // TODO: Implement getEmployee() method.
-    }
+        // TODO: Implement visitor() method.
+        if($visitor instanceof Manager){
+            $this->getManagerInfo($visitor);
+        }
 
-    public function getManager(Manager $manager)
-    {
-        // TODO: Implement getManager() method.
+        if($visitor instanceof CommonEmployee){
+            $this->getEmployeeInfo($visitor);
+        }
     }
 
     public function getBaseInfo(Employee $employee)
     {
-        echo "姓名：" . $employee->getName() . "\t" . "性别：" . $employee->getSex()  . "\t" . "薪水：" . $employee->getSalary()  . PHP_EOL;
+        echo "姓名：" . $employee->getName() . "\t" . "性别：" . $employee->getSex()  . "\t" . "薪水：" . $employee->getSalary() . "\t";
     }
 
     public function getManagerInfo(Manager $manager)
@@ -36,6 +38,5 @@ class Visitor implements IVisitor
         $this->getBaseInfo($commonEmployee);
         echo "工作：" . $commonEmployee->getJob() . PHP_EOL;
     }
-
 
 }

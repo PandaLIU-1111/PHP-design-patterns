@@ -16,11 +16,7 @@ class Client
     {
         $list = $this->mockEmployee();
         foreach ($list as $item){
-            if($item instanceof Manager){
-                $item->accept(new Visitor());
-            }else{
-                $item->accept(new Visitor());
-            }
+            $item->accept(new Visitor());
         }
     }
 
@@ -29,21 +25,21 @@ class Client
         $employee = [];
 
         $zhansan = new CommonEmployee();
-        $zhansan->setJob('就是一个Java程序狗');
+        $zhansan->setJob('天天写java');
         $zhansan->setName('张三');
         $zhansan->setSalary('10000');
         $zhansan->setSex(Employee::FEMALE);
         $employee[] = $zhansan;
 
         $liSi = new CommonEmployee();
-        $liSi->setJob('就是一个PHP程序狗');
+        $liSi->setJob('天天写PHP');
         $liSi->setName('李四');
         $liSi->setSalary('10000');
         $liSi->setSex(Employee::FEMALE);
         $employee[] = $liSi;
 
         $manager = new Manager();
-        $manager->setPerformance('我就是一个经理');
+        $manager->setPerformance('我没有业绩，但是能吹');
         $manager->setName('经理');
         $manager->setSalary('10000000');
         $manager->setSex(Employee::FEMALE);

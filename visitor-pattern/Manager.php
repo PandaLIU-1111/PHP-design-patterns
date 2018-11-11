@@ -9,7 +9,7 @@
 require_once './Employee.php';
 require_once './IVisitor.php';
 
-class Manager extends acceptEmployee
+class Manager extends Employee
 {
     private $performance;
 
@@ -33,7 +33,7 @@ class Manager extends acceptEmployee
     public function accept(IVisitor $visitor)
     {
      // TODO: Implement accept() method.
-        $visitor->getManager($this);
+        $visitor->visit($this);
     }
 
 }

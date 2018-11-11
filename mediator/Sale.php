@@ -6,7 +6,6 @@
  * Time: 2:43 PM
  */
 
-class sale
+class Sale
 {
-
 }
