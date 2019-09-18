@@ -17,14 +17,38 @@
  */
 class single
 {
-    private $obj = null;
+    private static $obj = null;
 
-    public function __construct()
+    // 防止new
+    private function __construct()
     {
-        if($this->obj == null){
-            $this->obj = new single();
+
+    }
+
+    // 防止克隆
+    private function __clone()
+    {
+        // TODO: Implement __clone() method.
+    }
+
+    // 防止序列化重新创建对象
+    private function __wakeup()
+    {
+        // TODO: Implement __wakeup() method.
+    }
+
+    // 实例化
+    static function getInstance()
+    {
+        if (!self::$obj instanceof single) {
+            static::$obj = new self();
         }
-        return $this->obj;
+        return static::$obj;
+
     }
 
 }
+
+$obj1 = single::getInstance();
+$obj2 = single::getInstance();
+var_dump($obj1, $obj2);
